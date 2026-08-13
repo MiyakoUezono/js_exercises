@@ -1,0 +1,25 @@
+##実行結果
+Infinity + NaN = NaN
+Infinity - NaN = NaN
+Infinity * NaN = NaN
+Infinity / NaN = NaN
+-Infinity + NaN = NaN
+-Infinity - NaN = NaN
+-Infinity * NaN = NaN
+-Infinity / NaN = NaN
+-Infinity + (-Infinity) = NaN
+-Infinity - (-Infinity) = Infinity
+-Infinity * (-Infinity) = -Infinity
+-Infinity / (-Infinity) = NaN
+Infinity + Infinity = Infinity
+Infinity - Infinity = NaN
+Infinity * Infinity = Infinity
+Infinity / Infinity = NaN
+-Infinity + Infinity = NaN
+-Infinity - Infinity = -Infinity
+-Infinity * Infinity = -Infinity
+-Infinity / Infinity = NaN
+NaN + NaN = NaN
+NaN - NaN = NaN
+NaN * NaN = NaN
+NaN / NaN = NaN
