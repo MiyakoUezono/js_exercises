@@ -1,0 +1,27 @@
+実行結果
+true<=0 false lte false
+true<=1 true lte true
+null<=0 true lte true
+null<=1 true lte true
+undefined<=3 false lte false
+3<=undefined false lte false
+3<=NaN false lte false
+NaN<=3 false lte false
+testFunc("10", 1)<=2 true lte true
+testFunc("10", 1)<=1 true lte true
+testFunc("10", {})<=2 false lte false
+testFunc("10", {})<=10 true lte true
+testFunc("10", null)<=10 true lte true
+testFunc("10", undefined)<=10 false lte false
+2<=testFunc("10", 1)) false lte false
+1<=testFunc("10", 1)) true lte true
+2<=testFunc("10", {})) true lte true
+10<=testFunc("10", {})) true lte true
+10<=testFunc("10", null)) false lte false
+10<=testFunc("10", undefined)) false lte false
+date1<=date2 true lte true
+date1<=date2.getTime() true lte true
+date1.getTime()<=date2 true lte true
+date2<=date1 false lte false
+date2.getTime()<=date1 false lte false
+date2<=date1.getTime() false lte false

@@ -1,4 +1,5 @@
 import { eq, lte } from "./index.js"; // typescript で書く場合は "./index.ts"
+import {test,expect} from "vitest" 
 
 class Test {
   constructor(str, value) {
