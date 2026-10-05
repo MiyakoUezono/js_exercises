@@ -1,13 +1,13 @@
 export function prop(o){
     let prop_array = []
-    for(let p of Reflect.ownKeys(o)){
-            prop_array.push(p)
+    for(let p of Reflect.ownKeys(o)){ //全ての独自プロパティを取得
+        prop_array.push(p)
     }
     for(let p in o){
         if(!Object.hasOwn(o,p)){ //!o.hasOwnProperty(p)とするとObject.create(null)で動かない（本来Object.prototypeが持っているメソッドのため）
             prop_array.push(p);
         }
-}
+    }
     return prop_array;
 }
 

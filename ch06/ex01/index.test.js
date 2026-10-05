@@ -19,9 +19,16 @@ describe('newHashTableのテスト', () =>{
        expect(hashTable.get("key2")).toEqual("new value")
     }),
 
+    test('異なる key でハッシュ値を変換したインデックスが衝突する場合', () => {
+       hashTable.put("ab", "value3");
+       hashTable.put("ba", "value4");
+       expect(hashTable.get("ab")).toEqual("value3")
+       expect(hashTable.get("ba")).toEqual("value4")
+    }),
+
     test('keyを削除', () => {
        hashTable.remove("key2");
-       expect(hashTable.size).toEqual(1)
+       expect(hashTable.size).toEqual(3)
        expect(hashTable.get("key2")).toEqual(undefined)
     })
 
