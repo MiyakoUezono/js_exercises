@@ -4,7 +4,7 @@ Object.defineProperty(o1,"y",{value:2, writable:true} )
 Object.defineProperty(o1,"z",{value:3, writable:false} )
 o1.x = 4 //オブジェクトリテラルで定義したプロパティはデフォルトでwritable
 o1.y = 5 //yはwritable属性と定義しているため=で上書きできる
-//o1.z = 6 ←zはwritableをfalseと定義しているため、strictモードで実行するとエラーとなる
+//o1.z = 6 ←zはwritableをfalseと定義しているため、strictモードで実行するとエラーとなる（上書きできない）
 console.log(o1.x) //4
 console.log(o1.y) //5
 console.log(o1.z) //3

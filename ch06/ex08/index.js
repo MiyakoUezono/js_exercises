@@ -1,6 +1,6 @@
 export function restrict(target, template){
     for(let key of Object.getOwnPropertyNames(target)){
-        if(Reflect.ownKeys(template).includes(key) === false){
+        if(Reflect.ownKeys(template).includes(key) === false){ //Reflect.ownKeys すべてのプロパティ名の配列
             delete target[key]
         }
     }

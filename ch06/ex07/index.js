@@ -1,3 +1,4 @@
+//Object.assign() targetに,sorceの列挙可の独自プロパティをコピーする関数
 export function assign(target, ...sources){
     if(target !== null && target !== undefined){ 
         if(typeof target !== "object"){ //基本型の場合はボックス化（一時的にオブジェクトのように扱える）
@@ -5,8 +6,8 @@ export function assign(target, ...sources){
         }
         for(let source of sources){
             if(source !== null && source !== undefined){
-                let sym = Object.getOwnPropertySymbols(source).filter(x => source.propertyIsEnumerable(x)) //Enumerableだけを抜き出すのにfilterを使用（AIに聞いた）
-                let obj_keys = Object.keys(source).concat(sym)
+                let sym = Object.getOwnPropertySymbols(source).filter(x => source.propertyIsEnumerable(x)) //列挙可かつSymbolキーの配列//Enumerableだけを抜き出すのにfilterを使用（AIに聞いた）
+                let obj_keys = Object.keys(source).concat(sym)//Symbolキーでない列挙可の独自プロパティたちを結合
                 for(let key of obj_keys){
                     target[key] = source[key]
                 }

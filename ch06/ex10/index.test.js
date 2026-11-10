@@ -35,7 +35,7 @@ const answer = {
   num1,
   num2,
   ...obj1,
-  ...obj3,
+  ...obj3, //barはobj3の値に上書きされる
   ...obj2,
   arr: [...arr1, num1, ...arr2]
 };

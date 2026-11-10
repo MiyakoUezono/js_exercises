@@ -4,7 +4,7 @@ export function prop(o){
         prop_array.push(p)
     }
     for(let p in o){
-        if(!Object.hasOwn(o,p)){ //!o.hasOwnProperty(p)とするとObject.create(null)で動かない（本来Object.prototypeが持っているメソッドのため）
+        if(!Object.hasOwn(o,p)){ //!o.hasOwnProperty(p)とするとObject.create(null)の場合に動かない（プロトタイプがnullのためObject.prototypeのメソッドであるhasOwnPropertyを継承しないため）
             prop_array.push(p);
         }
     }
