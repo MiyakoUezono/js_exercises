@@ -22,10 +22,10 @@ const C_data = data.filter(value => value["class"] ==="C")//クラスCのみフ�
 console.log(C_data.reduce((x,value) => x + (value["math"]+value["chemistry"]+value["geography"])/C_data.length, 0)) //176.6666
 
 //4. 3科目合計点が最も高い人の`name`
-const high_index = data.reduce((x,value,index,arr) => (arr[x]["math"] +arr[x]["chemistry"]+arr[x]["geography"]>value["math"]+value["chemistry"]+value["geography"]) ? x : index,0)
+const high_index = data.reduce((x,value,index,arr) => (arr[x]["math"] +arr[x]["chemistry"]+arr[x]["geography"]>value["math"]+value["chemistry"]+value["geography"]) ? x : index,0)//合計得点を一人ずつ比べ、最大値をもつインデックスを返す
 console.log(data[high_index]["name"]) //Frank
 
 //5. 全体の`geography`の標準偏差
-const ave = data.reduce((x,value) => x + value["geography"]/data.length, 0)
-const variance = data.reduce((x,value) => x + (value["geography"]-ave) **2 /data.length,0)
+const mean = data.reduce((x,value) => x + value["geography"]/data.length, 0)//平均
+const variance = data.reduce((x,value) => x + (value["geography"]-mean) **2 /data.length,0)//平均を使って分散を求める
 console.log(Math.sqrt(variance)) //22.3330569358242

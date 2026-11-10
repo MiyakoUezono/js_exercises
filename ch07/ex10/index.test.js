@@ -12,8 +12,8 @@ test("初期サイズ内でpush,set", () => {
   expect(arr.get(0)).toStrictEqual(1);
   arr.set(0,10)
   expect(arr.get(0)).toStrictEqual(10);
-  expect(() => arr.get(4)).toThrow("Array index out of range: 4") 
-  expect(() => arr.set(4,100)).toThrow("Array index out of range: 4")
+  expect(() => arr.get(4)).toThrow("Array index out of range: 4") //エラーをテストする方法はAIに聞いた
+  expect(() => arr.set(4,100)).toThrow("Array index out of range: 4")//※
 });
 
 
@@ -29,8 +29,6 @@ test("初期サイズ内でpush,set", () => {
 
 
 /*
-エラーをテストする方法はAIに聞いた
-expectの引数として直接arr.get(4)入れると、関数より先に引数get(4)が実行され、テストが失敗してしまう
+※expectの引数として直接arr.get(4)入れると、関数より先に引数get(4)が実行され、テストが失敗してしまう
 アロー関数を引数とすると、expectにその関数が渡され、toThrowの中でその関数が実行される
-});
 */
